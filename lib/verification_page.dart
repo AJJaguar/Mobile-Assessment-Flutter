@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+
+import 'congratulations.dart';
 
 class VerificationPage extends StatefulWidget {
   const VerificationPage({Key? key}) : super(key: key);
@@ -137,14 +140,19 @@ class _VerificationPageState extends State<VerificationPage> {
                 Center(
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(29.5),
-                    child: Container(
-                      height: 59.h,
-                      width: 59.w,
-                      color: const Color(0xFF46A5BA),
-                      child: const Icon(
-                        Icons.arrow_forward,
-                        color: Color(0xFFFFFFFF),
-                        size: 30,
+                    child: InkWell(
+                      onTap: () {
+                        Get.to(() => CongratulationsPage());
+                      },
+                      child: Container(
+                        height: 59.h,
+                        width: 59.w,
+                        color: const Color(0xFF46A5BA),
+                        child: const Icon(
+                          Icons.arrow_forward,
+                          color: Color(0xFFFFFFFF),
+                          size: 30,
+                        ),
                       ),
                     ),
                   ),

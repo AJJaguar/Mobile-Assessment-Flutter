@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:mobile_assessment_flutter/verification_page.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -97,41 +99,51 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      height: 63.46.h,
-                      width: 141.77.w,
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFF5F5F5),
-                        border: Border.all(color: const Color(0xFFFFFFFFF)),
-                        borderRadius: BorderRadius.circular(20.25.r),
-                      ),
-                      child: Center(
-                        child: Text(
-                          'Back',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            color: const Color(0xff484848),
-                            fontSize: 24.3.sp,
-                            fontFamily: 'Poppins',
+                    InkWell(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Container(
+                        height: 63.46.h,
+                        width: 141.77.w,
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFF5F5F5),
+                          border: Border.all(color: const Color(0xFFFFFFFFF)),
+                          borderRadius: BorderRadius.circular(20.25.r),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Back',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              color: const Color(0xff484848),
+                              fontSize: 24.3.sp,
+                              fontFamily: 'Poppins',
+                            ),
                           ),
                         ),
                       ),
                     ),
-                    Container(
-                      height: 63.46.h,
-                      width: 135.01.w,
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF46A5BA),
-                        borderRadius: BorderRadius.circular(20.25.r),
-                      ),
-                      child: Center(
-                        child: Text(
-                          'Next',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            color: const Color(0xffFFFFFF),
-                            fontSize: 24.3.sp,
-                            fontFamily: 'Poppins',
+                    InkWell(
+                      onTap: () {
+                        Get.to(() => const VerificationPage());
+                      },
+                      child: Container(
+                        height: 63.46.h,
+                        width: 135.01.w,
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF46A5BA),
+                          borderRadius: BorderRadius.circular(20.25.r),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Next',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              color: const Color(0xffFFFFFF),
+                              fontSize: 24.3.sp,
+                              fontFamily: 'Poppins',
+                            ),
                           ),
                         ),
                       ),

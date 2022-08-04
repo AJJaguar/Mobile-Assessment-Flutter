@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:mobile_assessment_flutter/send_a_package.dart';
 
 class CongratulationsPage extends StatefulWidget {
   const CongratulationsPage({Key? key}) : super(key: key);
@@ -69,21 +71,26 @@ class _CongratulationsPageState extends State<CongratulationsPage> {
                 ),
                 SizedBox(height: 70.1.h),
                 Center(
-                  child: Container(
-                    height: 63.h,
-                    width: 194.01.w,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF46A5BA),
-                      borderRadius: BorderRadius.circular(20.25.r),
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Continue',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          color: const Color(0xffFFFFFF),
-                          fontSize: 27.13.sp,
-                          fontFamily: 'Poppins',
+                  child: InkWell(
+                    onTap: () {
+                      Get.to(() => SendPackage());
+                    },
+                    child: Container(
+                      height: 63.h,
+                      width: 194.01.w,
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF46A5BA),
+                        borderRadius: BorderRadius.circular(20.25.r),
+                      ),
+                      child: Center(
+                        child: Text(
+                          'Continue',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            color: const Color(0xffFFFFFF),
+                            fontSize: 27.13.sp,
+                            fontFamily: 'Poppins',
+                          ),
                         ),
                       ),
                     ),
@@ -96,59 +103,4 @@ class _CongratulationsPageState extends State<CongratulationsPage> {
       ),
     );
   }
-}
-
-userDetails(String _title, bool is234) {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Padding(
-        padding: EdgeInsets.only(left: 9.r),
-        child: Text(
-          _title,
-          style: TextStyle(
-            fontWeight: FontWeight.w400,
-            color: const Color(0xff1F1F1F),
-            fontSize: 16.sp,
-            fontFamily: 'Poppins',
-          ),
-        ),
-      ),
-      SizedBox(height: 6.r),
-      Container(
-        height: 44.h,
-        width: 390,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(17.r),
-          color: const Color(0xffFDFEFF),
-        ),
-        alignment: Alignment.topLeft,
-        child: (is234)
-            ? Container(
-                width: 102.w,
-                height: 44.h,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: const Color(0xff1F1F1F1A),
-                  ),
-                  // color: Colors.red,
-                  borderRadius: BorderRadius.circular(17.r),
-                ),
-                child: Row(
-                  // crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text(
-                      '+234',
-                    ),
-                    SizedBox(width: 9.65.w),
-                    const Icon(Icons.arrow_drop_down),
-                  ],
-                ),
-              )
-            : Container(),
-      ),
-      SizedBox(height: 20.h),
-    ],
-  );
 }
